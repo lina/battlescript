@@ -365,16 +365,17 @@ angular.module('battlescript.services', [])
 .factory('Editor', function() {
 
   // makes a CodeMirror editor
-  var makeEditor = function(el, readOnly) {
+  var makeEditor = function(el, readOnly, undoDepth) {
     if (readOnly === true) { readOnly = 'nocursor'; }
-
+    if(!undoDepth) {undoDepth = 200;}
     return CodeMirror.fromTextArea(document.querySelector(el), {
       mode: 'javascript',
       theme: 'material',
       indentUnit: 2,
       tabSize: 2,
       lineNumbers: true,
-      readOnly: readOnly
+      readOnly: readOnly,
+      undoDepth: undoDepth
     });
   };
 

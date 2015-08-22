@@ -256,8 +256,8 @@ angular.module('battlescript.battle', [])
     if (!$scope.$$phase) $scope.$apply();
     
     // set up both editors
-    $scope.userEditor = Editor.makeEditor('#editor--user', false);
-    $scope.opponentEditor = Editor.makeEditor('#editor--opponent', true);
+    $scope.userEditor = Editor.makeEditor('#editor--user', false, 0);
+    $scope.opponentEditor = Editor.makeEditor('#editor--opponent', true, 0);
     $scope.handleEditorEvents();
 
     // set up various fields
